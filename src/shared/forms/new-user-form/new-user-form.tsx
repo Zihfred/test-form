@@ -1,8 +1,11 @@
-import { Button, MenuItem, Typography } from "@mui/material";
 import { Form } from "react-final-form";
+
+import { Button, MenuItem, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+
 import { FormTextField } from "../../components/form-text-field/form-text-field.tsx";
 import { FormMaskInput } from "../../components/form-mask-input/form-mask-input.tsx";
+
 import { validate } from "./validation.ts";
 import {
   COMMUNICATION_METHODS,
@@ -21,7 +24,7 @@ const NewUserForm = ({ onSubmit }: Props) => {
       <Typography variant="h5">Дані пацієнта</Typography>
       <Form
         initialValues={{
-          sex: " ",
+          gender: " ",
           preferedCommunicationMethod: " ",
           birthdayCountry: " ",
           documentType: "passportNote",
@@ -112,7 +115,7 @@ const NewUserForm = ({ onSubmit }: Props) => {
               </Grid>
               <Grid size={4}>
                 <FormTextField
-                  name="sex"
+                  name="gender"
                   label="Стать"
                   select
                   required

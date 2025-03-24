@@ -4,7 +4,7 @@ declare interface FormValues {
   middleName: string;
   IPN: string;
   birthDate: string;
-  sex: string;
+  gender: string;
   birthdayCountry: string;
   birthPlace: string;
   preferedCommunicationMethod?: string;

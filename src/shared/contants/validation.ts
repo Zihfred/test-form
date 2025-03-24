@@ -1,4 +1,5 @@
 export const REQUIRED_FIELD = "Поле не може бути пустим";
+export const ONLY_LETTERS = "Поле може містити тільки букви";
 export const UNZR_FORMAT = "Невірний формат UNZR. Приклад: 20230315-123456";
 export const DOCUMENT_WRONG_SERIES =
   "Невірний формат серії (Три літери українською та 5-9 цифр)";

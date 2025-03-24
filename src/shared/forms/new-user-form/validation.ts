@@ -6,6 +6,7 @@ import {
   IPN_INVALID,
   LONG_LENGTH,
   NOTE_PASSPORT,
+  ONLY_LETTERS,
   REQUIRED_FIELD,
   SECRET_WORD,
   SHORT_LENGTH,
@@ -14,6 +15,7 @@ import {
 import {
   OTHER_DOCUMENT_REGEX,
   REGEX_IPN,
+  REGEX_ONLY_LETTERS,
   REGEX_PASSPORT_NOTE,
   REGEX_PHONE,
   REGEX_SECRET_WORD,
@@ -25,6 +27,7 @@ const validationSchema: yup.ObjectSchema<FormValues> = yup.object({
   name: yup
     .string()
     .trim()
+    .matches(REGEX_ONLY_LETTERS, ONLY_LETTERS)
     .required(REQUIRED_FIELD)
     .min(3, SHORT_LENGTH(3))
     .max(50, LONG_LENGTH(50)),
@@ -38,10 +41,15 @@ const validationSchema: yup.ObjectSchema<FormValues> = yup.object({
   lastName: yup
     .string()
     .trim()
+    .matches(REGEX_ONLY_LETTERS, ONLY_LETTERS)
     .required(REQUIRED_FIELD)
     .min(2, SHORT_LENGTH(2))
     .max(50, LONG_LENGTH(50)),
-  middleName: yup.string().trim().required(REQUIRED_FIELD),
+  middleName: yup
+    .string()
+    .trim()
+    .matches(REGEX_ONLY_LETTERS, ONLY_LETTERS)
+    .required(REQUIRED_FIELD),
   IPN: yup.lazy((value) => {
     if (value !== "Немає РНОКПП(ІПН)") {
       return yup
@@ -53,7 +61,7 @@ const validationSchema: yup.ObjectSchema<FormValues> = yup.object({
     return yup.string().required();
   }),
   birthDate: yup.string().required(REQUIRED_FIELD),
-  sex: yup.string().trim().required(REQUIRED_FIELD),
+  gender: yup.string().trim().required(REQUIRED_FIELD),
   birthdayCountry: yup.string().trim().required(REQUIRED_FIELD),
   birthPlace: yup
     .string()
