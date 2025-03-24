@@ -3,12 +3,15 @@
 ## Опис проекту
 Форма створення персони з валідацією, реалізована на [React Final Form](https://final-form.org/react).
 
+- Demo: [https://chipper-griffin-9cca65.netlify.app/](https://chipper-griffin-9cca65.netlify.app/)
+
 ## Технології
 - **React 19**, **TypeScript**, **Vite**
 - **React Final Form** для керування формою
 - **Yup** для валідації
 - **MUI** для UI
 - **React IMask / React Input Mask** для форматування вводу
+- **Prettier** для форматування коду
 
 ## Запуск
 1. **Встановити залежності:**

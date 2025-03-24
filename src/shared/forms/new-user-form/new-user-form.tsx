@@ -301,7 +301,7 @@ const NewUserForm = ({ onSubmit }: Props) => {
                   helperText={
                     errors?.UNZRquery
                       ? errors?.UNZRquery
-                      : '"Вкажіть унікальний номер запису в Демографічному реєстрі (Запис №)"'
+                      : "Вкажіть унікальний номер запису в Демографічному реєстрі (Запис №)"
                   }
                   variant="standard"
                   fullWidth
