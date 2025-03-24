@@ -10,6 +10,7 @@ const NewUserPage = () => {
             return new Promise((resolve) => {
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
+                console.log(JSON.stringify(values, null, 2));
                 resolve();
               }, 1000);
             });
