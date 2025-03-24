@@ -175,6 +175,23 @@ export const COMMUNICATION_METHODS = [
 ];
 
 export const DOCUMENT_TYPES = [
+  {
+    value: "protectionCertificate",
+    title: "Посвідчення особи, яка потребує додаткового захист",
+  },
   { value: "passportNote", title: "Паспорт (книжечка)" },
   { value: "passportId", title: "Паспорт (ID-картка)" },
+  {
+    value: "permanentResidence",
+    title: "Посвідка на постійне проживання в Україні",
+  },
+  {
+    value: "temporaryResidence",
+    title: "Посвідка на постійне проживання в Україні",
+  },
+  { value: "provisionalResidence", title: "Посвідка на проживання" },
+  {
+    value: "provisionalCitizenship",
+    title: "Тимчасове посвідчення громадянина України",
+  },
 ];

@@ -1,5 +1,6 @@
 import * as yup from "yup";
 import {
+  DOCUMENT_WRONG_SERIES,
   INVALID_EMAIL,
   INVALID_PHONE,
   IPN_INVALID,
@@ -11,6 +12,7 @@ import {
   UNZR_FORMAT,
 } from "../../contants/validation.ts";
 import {
+  OTHER_DOCUMENT_REGEX,
   REGEX_IPN,
   REGEX_PASSPORT_NOTE,
   REGEX_PHONE,
@@ -67,13 +69,19 @@ const validationSchema: yup.ObjectSchema<FormValues> = yup.object({
   documentEndDate: yup.string().optional(),
   documentStartDate: yup.string().required(REQUIRED_FIELD),
   documentNumber: yup.lazy((_value, schema) => {
-    if (schema.parent.documentType === "passportNote") {
+    if (
+      schema.parent.documentType === "passportNote" ||
+      schema.parent.documentType === "passportId"
+    ) {
       return yup
         .string()
         .matches(REGEX_PASSPORT_NOTE, NOTE_PASSPORT)
         .required(REQUIRED_FIELD);
     }
-    return yup.string().optional();
+    return yup
+      .string()
+      .matches(OTHER_DOCUMENT_REGEX, DOCUMENT_WRONG_SERIES)
+      .optional();
   }),
   whoIssued: yup
     .string()
